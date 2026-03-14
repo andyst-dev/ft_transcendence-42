@@ -1,9 +1,9 @@
 # ft_transcendence
 
 A full-stack web application developed as part of the 42 curriculum.
-This project consists of building a single-page application around an online Pong experience, with user accounts, live chat, tournaments, Dockerized services, HTTPS and a broader microservice-based architecture.
+`ft_transcendence` is a single-page web application built around an online Pong project, with authentication, live chat, tournaments and a multi-service architecture.
 
-`ft_transcendence` was designed as a large collaborative project mixing web development, backend service design, real-time communication, game logic, deployment and security concerns in one application.
+It was a good way to build solid foundations in backend service design, real-time communication, deployment and security in a larger collaborative project.
 
 ## Features
 - Single-page web application built around an online Pong project
@@ -27,7 +27,7 @@ This project consists of building a single-page application around an online Pon
 - `srcs/requierements/grafana/` — Grafana provisioning and dashboards
 
 ## Mandatory part
-The mandatory part implements a web application where users can play Pong through a browser with a proper frontend experience, a registration flow and a tournament system.
+The mandatory part focuses on the application flow required to deliver a browser-based Pong experience with accounts and tournaments.
 
 ### Core application
 - browser-based Pong experience
@@ -64,12 +64,7 @@ The mandatory part implements a web application where users can play Pong throug
 
 ## Notes
 This repository comes from a collaborative 42 project built with [Gl1tsh](https://github.com/Gl1tsh), [HaruSnak](https://github.com/HaruSnak) and [tmoel1](https://github.com/tmoel1).
-
-The work was split like this:
-- I worked on the user-service
-- Gl1tsh handled the frontend framework and the live chat side
-- HaruSnak handled the broader infrastructure side, backend framework setup, the AI opponent, tournaments and other project-wide systems
-- tmoel1 handled the ELK stack part, including Elasticsearch, Logstash and Kibana
+The other parts of the project mainly covered the frontend framework, chat, infrastructure, tournament systems and observability stack.
 
 ## My part in this project
 My part in this project was the user-service.
@@ -108,6 +103,19 @@ Build and start the full project stack:
 make
 ```
 
+Once the services are running, the main application and monitoring tools are available at:
+
+- `https://localhost:8443` — main web application
+- `http://localhost:5601` — Kibana
+- `http://localhost:9090` — Prometheus
+- `http://localhost:3010` — Grafana
+
+The stack also exposes this technical endpoint:
+
+- `http://localhost:9200` — Elasticsearch API
+
+From the main application, you can create an account, log in and access the game and user-related features from the browser.
+
 Build the images only:
 
 ```bash
@@ -139,8 +147,8 @@ make re
 ```
 
 ## Learning outcomes
-This project was my first experience working on a larger full-stack application with multiple moving parts.
-It helped me get more comfortable with:
+This project was my first real experience working on a larger full-stack application with multiple moving parts.
+It helped build solid foundations in:
 - collaborative project structure
 - service-oriented backend design
 - user management and authentication flows
